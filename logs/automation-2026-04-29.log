@@ -1,0 +1,61 @@
+21:49:54.177 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:49:54.181 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:49:54.182 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:49:54.206 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:49:54.214 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:49:54.218 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:49:54.242 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:49:54.244 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:49:54.245 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:49:54.271 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/_rels/workbook.xml.rels
+21:49:54.272 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /xl/worksheets/_rels/sheet1.xml.rels
+21:49:54.273 [main] DEBUG org.apache.poi.openxml4j.opc.PackageRelationshipCollection - Parsing relationship: /_rels/.rels
+21:58:56.012 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+21:58:56.337 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:05:33.440 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:05:33.688 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:10:26.471 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:10:26.723 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:16:49.708 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:16:49.962 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:07:07.915 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+23:07:08.399 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:07:09.033 [main] INFO  testcase.TC002_LoginTest - ****Starting TC002_LoginTest****
+23:10:47.047 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+23:10:47.374 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:10:47.828 [main] INFO  testcase.TC001_AccountRegistrationTest - ****Starting TC001_AccountRegistrationTest****
+23:29:31.542 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+23:29:31.903 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:29:32.278 [main] INFO  testcase.TC001_AccountRegistrationTest - ****Starting TC001_AccountRegistrationTest****
+23:36:27.305 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\Grouping.xml"
+23:36:27.610 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\Grouping.xml
+
+23:36:28.048 [main] INFO  testcase.TC001_AccountRegistrationTest - ****Starting TC001_AccountRegistrationTest****
+23:38:19.610 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\test-output\testng-failed.xml"
+23:38:20.060 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\test-output\testng-failed.xml
+
+23:38:20.435 [main] INFO  testcase.TC002_LoginTest - ****Starting TC002_LoginTest****
+23:54:01.715 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+23:54:01.988 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:54:05.526 [main] INFO  testcase.TC001_AccountRegistrationTest - ****Starting TC001_AccountRegistrationTest****
+23:54:05.670 [main] INFO  testcase.TC001_AccountRegistrationTest - Clicked on MyAccount Link ...
+23:54:06.059 [main] INFO  testcase.TC001_AccountRegistrationTest - Clicked on Register Link...
+23:54:06.061 [main] INFO  testcase.TC001_AccountRegistrationTest - Providing customer data for registration...
