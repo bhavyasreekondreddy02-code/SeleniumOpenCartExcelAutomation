@@ -1,0 +1,52 @@
+22:09:15.230 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:09:22.318 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:09:23.218 [main] INFO  testcase.TC001_AccountRegistrationTest - Filling registration form with hybrid data (JSON + Random)...
+22:09:23.218 [main] INFO  testcase.TC001_AccountRegistrationTest - Test Data -> FirstName: BhavyaZT, LastName: KondreddysQ, Email: qmgUEY1779035955971@test.com
+22:09:29.224 [main] INFO  testcase.TC001_AccountRegistrationTest - Validating account registration confirmation message...
+22:09:29.355 [main] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:09:29.365 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:09:34.365 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:09:35.314 [main] INFO  testcase.TC001_AccountRegistrationTest - Filling registration form with hybrid data (JSON + Random)...
+22:09:35.314 [main] INFO  testcase.TC001_AccountRegistrationTest - Test Data -> FirstName: Poojithazm, LastName: MTechLg, Email: AjRlFJ1779035955971@test.com
+22:09:40.130 [main] INFO  testcase.TC001_AccountRegistrationTest - Validating account registration confirmation message...
+22:09:40.290 [main] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:09:40.290 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:09:44.352 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:09:45.279 [main] INFO  testcase.TC001_AccountRegistrationTest - Filling registration form with hybrid data (JSON + Random)...
+22:09:45.281 [main] INFO  testcase.TC001_AccountRegistrationTest - Test Data -> FirstName: TestBX, LastName: UserEz, Email: dRwYjJ1779035955972@test.com
+22:09:50.712 [main] INFO  testcase.TC001_AccountRegistrationTest - Validating account registration confirmation message...
+22:09:50.821 [main] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:09:50.821 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:12:56.194 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:12:56.789 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:13:06.896 [main] INFO  testcase.TC001_AccountRegistrationTest2 - **** Starting TC001_AccountRegistrationTest2 ****
+22:13:08.118 [main] INFO  testcase.TC001_AccountRegistrationTest2 - Filling registration form with random data...
+22:13:08.123 [main] INFO  testcase.TC001_AccountRegistrationTest2 - Test Data -> FirstName: iyWbF, LastName: zqPonf, Email: knBmty0169@test.com
+22:13:12.821 [main] INFO  testcase.TC001_AccountRegistrationTest2 - Validating account registration confirmation message...
+22:13:12.933 [main] INFO  testcase.TC001_AccountRegistrationTest2 - Actual confirmation message: Your Account Has Been Created!
+22:13:12.940 [main] INFO  testcase.TC001_AccountRegistrationTest2 - **** Finish TC001_AccountRegistrationTest2 ****
+22:49:14.647 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:49:14.980 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:49:17.994 [main] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:49:20.165 [main] INFO  testcase.TC002_LoginTest - Login attempt with: bhavsautomation06@gmail.com | Success: true
+22:49:20.169 [main] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:49:22.109 [main] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:49:33.938 [main] INFO  testcase.TC002_LoginTest - Login attempt with: testuser2@test.com | Success: false
+22:49:33.938 [main] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:49:35.944 [main] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:49:47.278 [main] INFO  testcase.TC002_LoginTest - Login attempt with: testuser3@test.com | Success: false
+22:49:47.278 [main] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:51:28.306 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:51:28.599 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+22:56:44.344 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+22:56:44.600 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+

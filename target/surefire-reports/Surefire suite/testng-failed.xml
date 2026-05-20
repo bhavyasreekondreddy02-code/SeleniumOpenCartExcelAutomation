@@ -3,20 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="testcase.TC002_LoginTest">
-        <methods>
-          <include name="test_login"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- testcase.TC002_LoginTest -->
-      <class name="testcase.TC001_AccountRegistrationTest">
+      <class name="testcase.TC005_CheckoutTest">
         <methods>
           <include name="tearDown"/>
+          <include name="test_checkout"/>
           <include name="setUp"/>
-          <include name="verify_account_registration"/>
         </methods>
-      </class> <!-- testcase.TC001_AccountRegistrationTest -->
+      </class> <!-- testcase.TC005_CheckoutTest -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

@@ -3,89 +3,93 @@ package pageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+import java.time.Duration;
 
 public class AccountRegistrationPage extends BasePage {
 
-	public AccountRegistrationPage(WebDriver driver) 
-	{
-		super(driver);
-		
-	}
-@FindBy(xpath="//input[@id='input-firstname']")
-WebElement txtFirstname;
+    public AccountRegistrationPage(WebDriver driver) {
+        super(driver);
+    }
 
-@FindBy(xpath="//input[@id='input-lastname']")
-WebElement txtLastname;
+    @FindBy(id="input-firstname")
+    private WebElement txtFirstname;
 
-@FindBy(xpath="//input[@id='input-email']")
-WebElement txtEmail;
+    @FindBy(id="input-lastname")
+    private WebElement txtLastname;
 
-@FindBy(xpath="//input[@id='input-telephone']")
-WebElement txtTelephone;
+    @FindBy(id="input-email")
+    private WebElement txtEmail;
 
-@FindBy(xpath="//input[@id='input-password']")
-WebElement txtPassword;
+    @FindBy(id="input-telephone")
+    private WebElement txtTelephone;
 
-@FindBy(xpath="//input[@id='input-confirm']")
-WebElement txtConfirmPassword;
+    @FindBy(id="input-password")
+    private WebElement txtPassword;
 
-@FindBy(xpath="//input[@name='agree']")
-WebElement chkdpolicy;
+    @FindBy(id="input-confirm")
+    private WebElement txtConfirmPassword;
 
-@FindBy(xpath="//input[@value='Continue']")
-WebElement btnContinue;
+    @FindBy(name="agree")
+    private WebElement chkPolicy;
 
-@FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")
-WebElement msgConfirmation;
+    @FindBy(xpath="//input[@value='Continue']")
+    private WebElement btnContinue;
 
-public void setFirstName(String fname)
-{
-	txtFirstname.sendKeys(fname);
-}	
-public void setLastName(String lname)
-	{
-		txtLastname.sendKeys(lname);
-	}
-public void setEmail(String email)
-{
-	txtEmail.sendKeys(email);
+    @FindBy(xpath="//h1[normalize-space()='Your Account Has Been Created!']")
+    private WebElement msgConfirmation;
+
+    // Actions
+    public void setFirstName(String fname) {
+        txtFirstname.clear();
+        txtFirstname.sendKeys(fname);
+    }
+
+    public void setLastName(String lname) {
+        txtLastname.clear();
+        txtLastname.sendKeys(lname);
+    }
+
+    public void setEmail(String email) {
+        txtEmail.clear();
+        txtEmail.sendKeys(email);
+    }
+
+    public void setTelephone(String tel) {
+        txtTelephone.clear();
+        txtTelephone.sendKeys(tel);
+    }
+
+    public void setPassword(String pwd) {
+        txtPassword.clear();
+        txtPassword.sendKeys(pwd);
+    }
+
+    public void setConfirmPassword(String pwd) {
+        txtConfirmPassword.clear();
+        txtConfirmPassword.sendKeys(pwd);
+    }
+
+    public void setPrivacyPolicy() {
+        if (!chkPolicy.isSelected()) {
+            chkPolicy.click();
+        }
+    }
+
+    public void clickContinue() {
+        new WebDriverWait(driver, Duration.ofSeconds(10))
+            .until(ExpectedConditions.elementToBeClickable(btnContinue))
+            .click();
+    }
+
+    public String getConfirmationMsg() {
+        try {
+            return new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(msgConfirmation))
+                .getText();
+        } catch (Exception e) {
+            return "Confirmation message not found";
+        }
+    }
 }
-
-public void setTelephone(String tel)
-{
-	txtTelephone.sendKeys(tel);
-}	
-
-public void setPassword(String pwd)
-{
-	txtPassword.sendKeys(pwd);
-}	
-
-public void setConfirmPassword(String pwd)
-{
-	txtConfirmPassword.sendKeys(pwd);
-}	
-
-public void setPrivacyPolicy()
-{
-	chkdpolicy.click();
-}	
-
-public void clickContinue()
-{
-	btnContinue.click();
-}	
-
-public String getConfirmationnMsg() {
-	try {
-		return msgConfirmation.getText();
-	}
-	catch(Exception e)
-	{
-		return e.getMessage();
-	}
-}
-
-	}
-
-

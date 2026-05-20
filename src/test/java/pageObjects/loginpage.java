@@ -1,46 +1,54 @@
 package pageObjects;
 
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import java.time.Duration;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class loginpage  extends BasePage
-{
-	  public loginpage(WebDriver driver) {
-	    	super (driver);
-	        
-	    }
-	    
-	 @FindBy(xpath="//input[@id='input-email']")
-	 WebElement txtEmailAddress;
+public class LoginPage extends BasePage {
 
-	 
-	 @FindBy(xpath="//input[@id='input-password']")
-	 WebElement txtPassword;
-	 
-	 @FindBy(xpath ="//input[@value='Login']")
-	 WebElement btnlogin;
-	 
-	 // Set the Email address"
-	 public void  setEmail(String email)
-	 {
-		 txtEmailAddress.sendKeys(email);
-		 
-	 }
-	 // Click on "Register" 
-	 public void  setPassword(String pwd)
-	 {
-		 txtPassword.sendKeys(pwd);
-		 
-	 }
-	 public void clickLogin()
-	 {
-		 btnlogin.click();
-		 
-	 }
-	}
+    public LoginPage(WebDriver driver) {
+        super(driver);
+    }
 
+    @FindBy(id="input-email")
+    private WebElement txtEmailAddress;
 
+    @FindBy(id="input-password")
+    private WebElement txtPassword;
 
+    @FindBy(xpath="//input[@value='Login']")
+    private WebElement btnLogin;
 
+    @FindBy(xpath="//div[contains(@class,'alert-danger')]")
+    private WebElement warningMsg;
 
+    // Enter email address
+    public void setEmail(String email) {
+        txtEmailAddress.clear();
+        txtEmailAddress.sendKeys(email);
+    }
+
+    // Enter password
+    public void setPassword(String pwd) {
+        txtPassword.clear();
+        txtPassword.sendKeys(pwd);
+    }
+
+    // Click Login button
+    public void clickLogin() {
+        btnLogin.click();
+    }
+
+    // Get warning message after invalid login
+    public String getWarningMsg() {
+        try {
+            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.visibilityOf(warningMsg));
+            return warningMsg.getText();
+        } catch (TimeoutException | NoSuchElementException e) {
+            return null; // No warning appeared
+        }
+    }
+}

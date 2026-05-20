@@ -1,0 +1,54 @@
+23:39:50.936 [main] DEBUG org.testng.TestNG - suiteXmlPath: "C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml"
+23:39:51.206 [main] INFO  org.testng.internal.Utils - [TestNG] Running:
+  C:\Users\hp\eclipse-workspace\OpencartvV123\master.xml
+
+23:39:55.367 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+23:39:56.412 [main] INFO  testcase.TC001_AccountRegistrationTest - Filling registration form with hybrid data (JSON + Random)...
+23:39:58.196 [main] INFO  testcase.TC001_AccountRegistrationTest - Validating account registration confirmation message...
+23:39:59.912 [main] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+23:39:59.912 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+23:39:59.953 [main] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+23:40:10.194 [main] ERROR testcase.TC001_AccountRegistrationTest - Exception during account registration: Expected condition failed: waiting for element to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Register']"}.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 148.0.3967.54, fedcm:accounts: true, goog:processID: 19396, ms:edgeOptions: {debuggerAddress: localhost:53856}, msedge: {msedgedriverVersion: 148.0.3967.54 (c994e204927e..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53856/devtoo..., se:cdpVersion: 148.0.3967.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cca670402951a5e7613a8c35783b8a43
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable, but the element was not found: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[text()='Register']"}.
+(tried for 10 seconds with 500 milliseconds interval)
+Build info: version: '4.41.0', revision: '9fc754f'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.10'
+Driver info: org.openqa.selenium.edge.EdgeDriver
+Capabilities {acceptInsecureCerts: false, browserName: MicrosoftEdge, browserVersion: 148.0.3967.54, fedcm:accounts: true, goog:processID: 19396, ms:edgeOptions: {debuggerAddress: localhost:53856}, msedge: {msedgedriverVersion: 148.0.3967.54 (c994e204927e..., userDataDir: C:\Users\hp\AppData\Local\T...}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53856/devtoo..., se:cdpVersion: 148.0.3967.54, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cca670402951a5e7613a8c35783b8a43
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:85) ~[selenium-support-4.41.0.jar:?]
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:233) ~[selenium-support-4.41.0.jar:?]
+	at pageObjects.HomePage.clickRegister(HomePage.java:37) ~[test-classes/:?]
+	at testcase.TC001_AccountRegistrationTest.verify_account_registration(TC001_AccountRegistrationTest.java:20) ~[test-classes/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154) ~[testng-7.12.0.jar:7.12.0]
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134) ~[testng-7.12.0.jar:7.12.0]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596) [?:?]
+	at org.testng.TestRunner.privateRun(TestRunner.java:744) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestRunner.run(TestRunner.java:616) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52) [testng-7.12.0.jar:7.12.0]
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.runSuites(TestNG.java:1112) [testng-7.12.0.jar:7.12.0]
+	at org.testng.TestNG.run(TestNG.java:1079) [testng-7.12.0.jar:7.12.0]
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293) [testng-remote.jar:?]
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91) [testng-remote.jar:?]

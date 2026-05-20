@@ -2,67 +2,52 @@ package utilities;
 
 import java.awt.Desktop;
 import java.io.File;
-import java.io.IOException;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
 
-import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.ImageHtmlEmail;
-import org.apache.commons.mail.resolver.DataSourceUrlResolver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
-import com.aventstack.extentreports.ExtentReports;
-import com.aventstack.extentreports.ExtentTest;
-import com.aventstack.extentreports.Status;
+import com.aventstack.extentreports.*;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+
 import testbase.BaseClass;
-import java.util.List;
 
+public class ExtentReportManager extends BaseClass implements ITestListener {
 
+    private static ExtentReports extent;
+    private static ThreadLocal<ExtentTest> test = new ThreadLocal<>();
+    private String repName;
 
-
-
-public class ExtentReportManager  extends BaseClass implements ITestListener {
-
-    public ExtentSparkReporter sparkReporter;
-    public ExtentReports extent;
-    public ExtentTest test;
-    String repName;
-
-    
-    
+    @Override
     public void onStart(ITestContext testContext) {
         String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
         repName = "Test-Report-" + timeStamp + ".html";
 
-        sparkReporter = new ExtentSparkReporter(".\\reports\\" + repName);
-        sparkReporter.config().setDocumentTitle("opencart Automation Report");
-        sparkReporter.config().setReportName("opencart Functional Testing");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("./reports/" + repName);
+        sparkReporter.config().setDocumentTitle("OpenCart Automation Report");
+        sparkReporter.config().setReportName("OpenCart Functional Testing");
         sparkReporter.config().setTheme(Theme.DARK);
 
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
 
-        // Project details
+        // System info
         extent.setSystemInfo("Application", "OpenCart");
         extent.setSystemInfo("Module", "Admin");
         extent.setSystemInfo("Sub Module", "Customers");
-        // Current user details
         extent.setSystemInfo("User Name", System.getProperty("user.name"));
         extent.setSystemInfo("Environment", "QA");
 
         // Parameters from testng.xml
         String os = testContext.getCurrentXmlTest().getParameter("os");
-            extent.setSystemInfo("Operating System", os);
-        
+        if (os != null) extent.setSystemInfo("Operating System", os);
 
         String browser = testContext.getCurrentXmlTest().getParameter("browser");
-            extent.setSystemInfo("Browser", browser);
-        
+        if (browser != null) extent.setSystemInfo("Browser", browser);
 
         List<String> includedGroups = testContext.getCurrentXmlTest().getIncludedGroups();
         if (!includedGroups.isEmpty()) {
@@ -70,56 +55,74 @@ public class ExtentReportManager  extends BaseClass implements ITestListener {
         }
     }
 
-    //this method will execute when any test case get started
-    //listerners will listen to the events and perform the actions based on the events.
-    
+    @Override
+    public void onTestStart(ITestResult result) {
+        ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
+        extentTest.assignCategory(result.getMethod().getGroups());
+        test.set(extentTest);
+    }
+
+    @Override
     public void onTestSuccess(ITestResult result) {
-        test = extent.createTest(result.getTestClass().getName());
-        test.assignCategory(result.getMethod().getGroups());
-        test.log(Status.PASS, result.getName() + " got successfully executed");
+        test.get().log(Status.PASS, result.getName() + " executed successfully");
+        // ❌ No screenshot on success
     }
 
-    
-    
-        
-        public void onTestFailure(ITestResult result) {
-            test = extent.createTest(result.getTestClass().getName());
-            test.assignCategory(result.getMethod().getGroups());
-            test.log(Status.FAIL, result.getName() + " got failed");
-            test.log(Status.INFO, result.getThrowable().getMessage());
-
-            // Capture screenshot
-            try {
-            String imgPath = new BaseClass().captureScreen(result.getName());
-            test.addScreenCaptureFromPath(imgPath);
-            }catch(IOException e) {
-            	e.printStackTrace();
-                
-            }
+    @Override
+    public void onTestFailure(ITestResult result) {
+        if (test.get() == null) {
+            ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
+            extentTest.assignCategory(result.getMethod().getGroups());
+            test.set(extentTest);
         }
-    
-    
-    public void onTestSkipped(ITestResult result) {
-        test = extent.createTest(result.getTestClass().getName());
-        test.assignCategory(result.getMethod().getGroups());
-        test.log(Status.SKIP, result.getName() + " got skipped");
-        test.log(Status.INFO, result.getThrowable().getMessage());
-        
+        test.get().log(Status.FAIL, result.getName() + " failed");
+        if (result.getThrowable() != null) {
+            test.get().log(Status.INFO, result.getThrowable().getMessage());
+        }
+        // ✅ Screenshot only on failure
+        attachScreenshot(result);
     }
 
-    //all tests are finished and reports are ready to be generated and opened in browser.
-   
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        if (test.get() == null) {
+            ExtentTest extentTest = extent.createTest(result.getMethod().getMethodName());
+            extentTest.assignCategory(result.getMethod().getGroups());
+            test.set(extentTest);
+        }
+        test.get().log(Status.SKIP, result.getName() + " skipped");
+        if (result.getThrowable() != null) {
+            test.get().log(Status.INFO, result.getThrowable().getMessage());
+        }
+        // ❌ No screenshot on skipped
+    }
+
+    @Override
     public void onFinish(ITestContext testContext) {
-        extent.flush(); //to write all the logs and information to the report file.
-
-        String pathOfExtentReport = System.getProperty("user.dir") + "\\reports\\" + repName;
-        File extentReport = new File(pathOfExtentReport);
-
+        if (extent != null) {
+            extent.flush();
+        }
         try {
-            Desktop.getDesktop().browse(extentReport.toURI());//open the report on browser
-        } catch (IOException e) {
+            File reportFile = new File(System.getProperty("user.dir") + "/reports/" + repName);
+            Desktop.getDesktop().browse(reportFile.toURI()); // auto-open in browser
+        } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    private void attachScreenshot(ITestResult result) {
+        try {
+            // ✅ Use active driver from BaseClass
+            String imgPath = captureScreen(result.getName());
+            if (imgPath != null) {
+                test.get().addScreenCaptureFromPath(imgPath);
+            }
+        } catch (Exception e) {
+            test.get().log(Status.WARNING, "Screenshot not attached: " + e.getMessage());
+        }
+    }
+}
+
         /*
         try {
             URL url = new URL("file:///" + System.getProperty("user.dir") + "\\reports\\" + repName);
@@ -149,5 +152,4 @@ public class ExtentReportManager  extends BaseClass implements ITestListener {
         }
         */
 
-    }
-}
+    

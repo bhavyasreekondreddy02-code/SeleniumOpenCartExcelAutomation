@@ -2,74 +2,52 @@ package testcase;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import pageObjects.AccountRegistrationPage;
 import pageObjects.HomePage;
 import testbase.BaseClass;
-import utilities.DataGenerator;
+import utilities.JsonDataProviders;
 
+public class TC001_AccountRegistrationTest extends BaseClass {
 
-public class TC001_AccountRegistrationTest extends BaseClass{
-    
-  
+    @Test(dataProvider = "RegisterDataHybrid", dataProviderClass = JsonDataProviders.class, groups = {"Regression","Master"})
+    public void verify_account_registration(String firstname, String lastname, String email, String password, String mobile) {
+        try {
+            logger.info("**** Starting TC001_AccountRegistrationTest ****");
 
-    @Test(groups = {"Regression","Master"})
-    public void verify_account_registration() {
-    	try {
-    	logger.info("****Starting TC001_AccountRegistrationTest****");
-        HomePage hp = new HomePage(driver);
-        
-        hp.clickMyAccount();
-        logger.info("Clicked on MyAccount Link ...");
-        hp.clickRegister();
-        logger.info("Clicked on Register Link...");
+            HomePage hp = new HomePage(getDriver());
+            hp.clickMyAccount();
+            hp.clickRegister();
 
-        AccountRegistrationPage regPage = new AccountRegistrationPage(driver);
-       
-        logger.info("Providing customer data for registration...");
-        // Generate random test data using DataGenerator
-        String firstName = DataGenerator.randomString(5);
-        String lastName = DataGenerator.randomString(7);
-        String email = DataGenerator.randomEmail();
-        String phone = DataGenerator.randomNumber(10);
-        String password = DataGenerator.randomAlphaNumeric(8);
+            AccountRegistrationPage regPage = new AccountRegistrationPage(getDriver());
 
-        // Fill registration form
-        regPage.setFirstName(firstName);
-        regPage.setLastName(lastName);
-        regPage.setEmail(email);
-        regPage.setTelephone(phone);
-        regPage.setPassword(password);
-        regPage.setConfirmPassword(password);
+            // Generate unique email
+            String uniqueEmail = email.split("@")[0] + System.currentTimeMillis() + "@" + email.split("@")[1];
+            logger.info("Generated unique email: " + uniqueEmail);
 
-        regPage.setPrivacyPolicy();
-        regPage.clickContinue();
+            // Fill registration form
+            regPage.setFirstName(firstname);
+            regPage.setLastName(lastname);
+            regPage.setEmail(uniqueEmail);
+            regPage.setTelephone(mobile);
+            regPage.setPassword(password);
+            regPage.setConfirmPassword(password);
+            regPage.setPrivacyPolicy();
+            regPage.clickContinue();
 
-        // Validate confirmation message
-        logger.info("Validating account registration confirmstion message...");
-        String confMsg = regPage.getConfirmationnMsg();
-        System.out.println("Actual confirmation message: " + confMsg);
-        if(confMsg.equals("Your Account Has Been Created!"))
-        {
-        	Assert.assertTrue(true);
+            // Validate confirmation
+            String confMsg = regPage.getConfirmationMsg();
+            logger.info("Actual confirmation message: " + confMsg);
+
+            Assert.assertTrue(confMsg.toLowerCase().contains("account has been created"),
+                    "Account registration failed. Actual message: " + confMsg);
+
+        } catch (Exception e) {
+            String screenshotPath = captureScreen("verify_account_registration");
+            logger.error("Exception during account registration: " + e.getMessage() + 
+                         ". Screenshot: " + screenshotPath, e);
+            Assert.fail("Exception during account registration: " + e.getMessage());
         }
-        else
-        {
-    	   logger.error("Test failed.. ");
-        	logger.debug("Debug logs..");
-        	Assert.assertTrue(false);
-        	
-        }
-      //Assert.assertEquals(confMsg, "Your Account Has Been Created!!!");- hard assertion
-    }
-    catch (Exception e) 
-    	{
-    	
-    	                                   
-    	Assert.fail();
-    	
-}
-    	logger.info("****Finish TC001_AccountRegistrationTest****");
+
+        logger.info("**** Finish TC001_AccountRegistrationTest ****");
     }
 }
-

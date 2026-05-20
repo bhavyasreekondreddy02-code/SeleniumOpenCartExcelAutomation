@@ -1,0 +1,16 @@
+[
+  {
+    "firstname": "Bhavya",
+    "lastname": "sree",
+    "email": "Bhavsautomation06.doe@example.com",
+    "password": "Bhavya@123",
+    "mobile": "8688035321"
+  },
+  {
+    "firstname": "Stella",
+    "lastname": "Smith",
+    "email": "Stellasmith@example.com",
+    "password": "password@456",
+    "mobile": "9876543210"
+  }
+]

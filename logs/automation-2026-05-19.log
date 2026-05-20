@@ -1,0 +1,44 @@
+22:21:20.797 [TestNG-tests-2] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:21:21.341 [TestNG-tests-1] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:21:22.403 [TestNG-tests-1] INFO  testcase.TC001_AccountRegistrationTest - Generated unique email: Stellasmith+17792094669641779209482403@example.com
+22:21:22.542 [TestNG-tests-3] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:21:23.536 [TestNG-tests-3] INFO  testcase.TC001_AccountRegistrationTest - Generated unique email: Stellasmith+17792094669641779209483536@example.com
+22:21:25.330 [TestNG-tests-1] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:21:25.330 [TestNG-tests-1] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:21:26.678 [TestNG-tests-3] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:21:26.678 [TestNG-tests-3] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:21:28.136 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:28.148 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - Executing login test with user: bhavsautomation06@gmail.com
+22:21:29.660 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:29.660 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - Executing login test with user: bhavsautomation06@gmail.com
+22:21:32.251 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:21:32.941 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:21:33.330 [TestNG-tests-2] INFO  testcase.TC001_AccountRegistrationTest - **** Starting TC001_AccountRegistrationTest ****
+22:21:35.799 [TestNG-tests-2] INFO  testcase.TC001_AccountRegistrationTest - Generated unique email: Stellasmith+17792094669641779209495799@example.com
+22:21:36.050 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:36.052 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser2@test.com
+22:21:37.024 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:37.026 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser2@test.com
+22:21:38.335 [TestNG-tests-2] INFO  testcase.TC001_AccountRegistrationTest - Actual confirmation message: Your Account Has Been Created!
+22:21:38.336 [TestNG-tests-2] INFO  testcase.TC001_AccountRegistrationTest - **** Finish TC001_AccountRegistrationTest ****
+22:21:46.254 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:46.254 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - Executing login test with user: bhavsautomation06@gmail.com
+22:21:49.074 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:21:49.184 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:21:49.506 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:21:52.021 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:52.021 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser3@test.com
+22:21:52.662 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:52.662 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser3@test.com
+22:21:59.335 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:21:59.335 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser2@test.com
+22:22:05.342 [TestNG-tests-1] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:22:05.547 [TestNG-tests-3] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:22:12.347 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:22:16.586 [TestNG-tests-1] INFO  testcase.TC004_AddToCartTest - **** Starting TC004_AddToCartTest ****
+22:22:17.957 [TestNG-tests-3] INFO  testcase.TC004_AddToCartTest - **** Starting TC004_AddToCartTest ****
+22:22:20.323 [TestNG-tests-3] INFO  testbase.BaseClass - Screenshot captured: C:\Users\hp\eclipse-workspace\OpencartvV123/screenshots/test_addToCart_2026.05.19.22.22.20.png
+22:22:24.503 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Starting TC002_LoginTest ****
+22:22:24.503 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - Executing login test with user: testuser3@test.com
+22:22:36.212 [TestNG-tests-2] INFO  testcase.TC002_LoginTest - **** Finish TC002_LoginTest ****
+22:22:49.827 [TestNG-tests-1] INFO  testbase.BaseClass - Screenshot captured: C:\Users\hp\eclipse-workspace\OpencartvV123/screenshots/test_addToCart_2026.05.19.22.22.49.png

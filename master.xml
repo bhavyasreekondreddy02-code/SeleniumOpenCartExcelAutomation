@@ -10,9 +10,12 @@
   <parameter name="browser" value="edge"></parameter>
   <!-- we can run multiple browser tests in parallel by using testng.xml file -->
     <classes>
-      <class name="testcase.TC001_AccountRegistrationTest"/> 
-      <class name="testcase.TC002_LoginTest"/> 
-   <!--  <class name="testcase.TC003_Datadriventest"/>-->
+     <!-- <class name="testcase.TC001_AccountRegistrationTest"/> -->
+    <!--<class name="testcase.TC001_AccountRegistrationTest2"/>  -->
+    <!--  <class name="testcase.TC002_LoginTest"/> -->
+    <!-- <class name="testcase.TC003_SearchTest"/>-->
+    <class name ="testcase.TC004_AddToCartTest"/>
+      
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
