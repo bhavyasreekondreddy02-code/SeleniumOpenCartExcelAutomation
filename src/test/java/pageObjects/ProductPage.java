@@ -15,10 +15,10 @@ public class ProductPage extends BasePage {
     public CartPage clickAddToCart() {
         driver.findElement(addToCartButton).click();
 
-        // Wait for any alert (success or warning)
+        // Wait for success alert
         waitHelper.waitForVisibility(alertBox);
 
-        String alertText = driver.findElement(alertBox).getText();
+        String alertText = driver.findElement(alertBox).getText().trim();
         System.out.println("Alert text: " + alertText);
 
         if (!alertText.toLowerCase().contains("success")) {

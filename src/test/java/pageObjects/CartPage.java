@@ -16,15 +16,12 @@ public class CartPage extends BasePage {
     @FindBy(xpath = "//p[contains(text(),'Your shopping cart is empty!')]")
     private WebElement emptyCartMessage;
 
-    // Broader locator: catches all product links in the cart dropdown
     @FindBy(css = "#cart .dropdown-menu td a")
     private List<WebElement> cartProducts;
 
     public void openCart() {
         btnCart.click();
-        // Wait for dropdown to appear
         waitHelper.waitForVisibility(By.cssSelector("#cart .dropdown-menu"));
-        // Wait for product links if cart is not empty
         if (!isCartEmpty()) {
             waitHelper.waitForPresence(By.cssSelector("#cart .dropdown-menu td a"));
         }
@@ -46,7 +43,7 @@ public class CartPage extends BasePage {
             String actualName = product.getText().trim();
             System.out.println("Cart contains: " + actualName);
 
-            // Flexible match: case‑insensitive contains
+            // Flexible match: case-insensitive contains
             if (actualName.toLowerCase().contains(productName.toLowerCase())) {
                 return true;
             }
