@@ -1,4 +1,4 @@
-# 🚀 Selenium Hybrid Automation Framework – OpencartV123
+# 🚀 Selenium Hybrid Automation Framework – SeleniumOpenCartJsonAutomation
 
 ## 📌 Overview
 This repository contains a **Selenium + TestNG hybrid automation framework** designed for **Opencart application testing**.  
