@@ -29,4 +29,4 @@ It supports **cross‑browser execution**, **parallel testing**, and **Jenkins C
 ## 🛠️ Setup Instructions
 1. Clone the repository:
    ```bash
-   git clone https://github.com/bhavyasreekondreddy02-code/OpencartvV123.git
+   git clone https://github.com/bhavyasreekondreddy02-code/SeleniumOpenCartJsonAutomation.git
