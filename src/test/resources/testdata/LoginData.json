@@ -1,5 +1,0 @@
-[
-  { "username": "bhavsautomation06@gmail.com", "password": "Bhavs@123", "exp": "valid" },   
-  { "username": "testuser2@test.com", "password": "Password2@", "exp": "invalid" },          
-  { "username": "testuser3@test.com", "password": "Password3@", "exp": "invalid" } 
-]

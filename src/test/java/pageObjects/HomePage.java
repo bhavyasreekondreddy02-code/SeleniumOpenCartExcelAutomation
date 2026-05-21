@@ -56,10 +56,4 @@ public class HomePage extends BasePage {
         return this;
     }
 
-    // Click on search button (returns SearchPage directly)
-    public SearchPage clickSearch() {
-        btnSearch.click();
-        return new SearchPage(driver);
-    }
 }
-   
